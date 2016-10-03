@@ -1,7 +1,17 @@
 package main.views;
 
-/**
- * Created by marysalcedo on 10/2/16.
- */
+import main.enums.Option;
+
+
+
 public class BoardView {
+
+    public BoardView(){
+
+    }
+
+    public void printBoard(){
+        int option = Option.getOption();
+
+    }
 }
