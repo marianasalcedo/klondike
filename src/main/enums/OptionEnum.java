@@ -5,26 +5,26 @@ import main.utils.ClosedInterval;
 
 import java.util.Scanner;
 
-public enum Option {
-    PLAY_DECK_TO_PILE("Mover de baraja a descarte", 1),
-    PILE_TO_PLAY_DECK("Mover de descarte a baraja", 2),
-    PILE_TO_SUIT("Mover de descarte a palo", 3),
-    PILE_TO_LADDER("Mover de descarte a baraja", 4),
-    LADDER_TO_FOUNDATION("Mover de escalera a palo", 5),
-    LADDER_TO_LADDER("Mover de escalera a escalera", 6),
-    FOUNDATION_TO_LADDER("Mover de descarte a baraja", 7),
-    TURN_INTO_LADDER("Voltear en escalera", 8),
-    EXIT("Salir", 9);
+public enum OptionEnum {
+    PLAY_DECK_TO_PILE(1, "Mover de baraja a descarte"),
+    PILE_TO_PLAY_DECK(2, "Mover de descarte a baraja"),
+    PILE_TO_SUIT(3, "Mover de descarte a palo"),
+    PILE_TO_LADDER(4, "Mover de descarte a baraja"),
+    LADDER_TO_FOUNDATION(5, "Mover de escalera a palo"),
+    LADDER_TO_LADDER(6, "Mover de escalera a escalera"),
+    FOUNDATION_TO_LADDER(7, "Mover de descarte a baraja"),
+    TURN_INTO_LADDER(8, "Voltear en escalera"),
+    EXIT(9, "Salir");
 
 
-    private static final int MAX_OPTIONS = 9;
     private static final int MIN_OPTIONS = 1;
+    private static final int MAX_OPTIONS = 9;
     private static ClosedInterval interval = new ClosedInterval(MIN_OPTIONS, MAX_OPTIONS);
 
-    private String option;
     private int value;
+    private String option;
 
-    Option(String option, int value) {
+    OptionEnum(int value, String option) {
         this.option = option;
         this.value = value;
     }
@@ -42,7 +42,7 @@ public enum Option {
         System.out.println("Opción?: [1-9]");
     }
 
-    public static int getOption(){
+    public static OptionEnum getOption(){
         printAllOptions();
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -50,6 +50,6 @@ public enum Option {
             System.out.println("La opción debe ser entre 1 y 9 inclusives.");
             option = scanner.nextInt();
         }
-        return option;
+        return OptionEnum.values()[option];
     }
 }

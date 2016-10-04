@@ -1,7 +1,6 @@
 package main.views;
 
-import main.enums.Option;
-
+import main.enums.OptionEnum;
 
 
 public class BoardView {
@@ -11,7 +10,8 @@ public class BoardView {
     }
 
     public void printBoard(){
-        int option = Option.getOption();
+        OptionEnum option = OptionEnum.getOption();
+
 
     }
 }

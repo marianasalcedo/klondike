@@ -1,4 +1,3 @@
-import main.enums.Option;
 import main.views.BoardView;
 
 
