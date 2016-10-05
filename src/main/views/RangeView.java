@@ -5,7 +5,7 @@ import main.utils.IO;
 
 public class RangeView {
 
-    private final static int MIN_RANGE = 1;
+    public final static int MIN_RANGE = 1;
 
     public int askForRange(int min, int max, String message) {
         if (min < MIN_RANGE) {

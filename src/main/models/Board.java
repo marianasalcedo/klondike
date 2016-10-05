@@ -32,25 +32,4 @@ public class Board {
     public Deck getPlayDeck() {
         return playDeck;
     }
-
-    public Boolean finished(){
-        for (Deck elem : foundations){
-            if(!elem.isFull()) {
-                return false;
-            }
-        }
-
-        for (Deck elem: ladders){
-            if(!elem.isEmpty()){
-                return false;
-            }
-        }
-
-        if(!pile.isEmpty() || !playDeck.isEmpty()){
-            return false;
-        }
-
-        return true;
-    }
-
 }

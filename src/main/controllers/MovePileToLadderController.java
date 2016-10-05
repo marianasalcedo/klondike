@@ -16,7 +16,7 @@ public class MovePileToLadderController extends MoveController {
 
     @Override
     Deck getTarget() {
-        int index = rangeView.askForRange(0, game.getBoard().getLadders().size(), "A que escalera?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getLadders().size(), "A que escalera?");
         return game.getBoard().getLadders().get(index);
     }
 
@@ -40,6 +40,5 @@ public class MovePileToLadderController extends MoveController {
 
     @Override
     void postExecute(Deck source, Deck target) {
-        //Does nothing
     }
 }

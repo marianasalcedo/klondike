@@ -8,10 +8,6 @@ public class CardView {
     private final static String LAST_CARD_HIDDEN_SYMBOL = "[X,X]";
     private final static String LADDER_CARD_HIDDEN_SYMBOL = "[";
 
-    /**
-     * @param card
-     *      Card to be printed.
-     */
     public void writeCard(Card card, Boolean isLastCard) {
         if ( card.isHidden() ) {
             IO.instance().write( isLastCard ? LAST_CARD_HIDDEN_SYMBOL : LADDER_CARD_HIDDEN_SYMBOL);

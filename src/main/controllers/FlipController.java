@@ -13,7 +13,7 @@ public class FlipController extends OperationController {
     public void execute() {
         Board board = game.getBoard();
 
-        Deck ladder = board.getLadders().get(rangeView.askForRange(0, board.getLadders().size(), "Escalera?"));
+        Deck ladder = board.getLadders().get(rangeView.askForRange(rangeView.MIN_RANGE, board.getLadders().size(), "Escalera?"));
 
         if ( ladder.isEmpty() ) {
             ErrorView.instance().writeError("No hay cartas en las escalera!");

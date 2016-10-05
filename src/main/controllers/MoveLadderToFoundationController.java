@@ -11,13 +11,13 @@ public class MoveLadderToFoundationController extends  MoveController {
 
     @Override
     Deck getSource() {
-        int index = rangeView.askForRange(0, game.getBoard().getLadders().size(), "De que escalera?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getLadders().size(), "De que escalera?");
         return game.getBoard().getLadders().get(index);
     }
 
     @Override
     Deck getTarget() {
-        int index = rangeView.askForRange(0, game.getBoard().getFoundations().size(), "A que palo?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getFoundations().size(), "A que palo?");
         return game.getBoard().getFoundations().get(index);
     }
 
@@ -44,6 +44,5 @@ public class MoveLadderToFoundationController extends  MoveController {
 
     @Override
     void postExecute(Deck source, Deck target) {
-        //Does nothing
     }
 }

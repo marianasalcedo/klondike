@@ -1,7 +1,5 @@
 package main.models;
 
-import main.models.enums.Number;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,20 +13,12 @@ public class Deck {
         cards = new ArrayList<>();
     }
 
-    public Boolean isFull(){
-        return cards.size() == Number.values().length;
-    }
-
     public Boolean isEmpty(){
         return cards.size() == 0;
     }
 
     public List<Card> getCards() {
         return cards;
-    }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
     }
 
     public List<Card> moveCards(int quantity) {

@@ -16,13 +16,4 @@ public class ClosedInterval {
     public boolean includes(int value) {
         return min <= value && value <= max;
     }
-
-    int getMin() {
-        return min;
-    }
-
-    int getMax() {
-        return max;
-    }
-
 }

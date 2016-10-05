@@ -22,9 +22,4 @@ public class Game {
     public Board getBoard() {
         return board;
     }
-
-    public Boolean finished(){
-        return board.finished();
-    }
-
 }

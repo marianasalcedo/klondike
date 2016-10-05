@@ -51,7 +51,6 @@ public class StartController extends OperationController {
 
         initializeFoundations(board);
 
-        //Set remaining cards to the play deck
         for (Card card: cards) {
             board.getPlayDeck().addCard(card);
         }

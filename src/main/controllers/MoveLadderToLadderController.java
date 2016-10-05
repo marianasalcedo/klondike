@@ -14,13 +14,13 @@ public class MoveLadderToLadderController extends MoveController {
 
     @Override
     Deck getSource() {
-        sourceIndex = rangeView.askForRange(0, game.getBoard().getLadders().size(), "De que escalera?");
+        sourceIndex = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getLadders().size(), "De que escalera?");
         return game.getBoard().getLadders().get(sourceIndex);
     }
 
     @Override
     Deck getTarget() {
-        int index = rangeView.askForRange(0, game.getBoard().getLadders().size(), "A que escalera?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getLadders().size(), "A que escalera?");
         return game.getBoard().getLadders().get(index);
     }
 
@@ -41,12 +41,11 @@ public class MoveLadderToLadderController extends MoveController {
 
     @Override
     int getCardNumber() {
-        cardNumber = rangeView.askForRange(0, game.getBoard().getLadders().get(sourceIndex).getCards().size(), "Cuantas cartas?") + 1;
+        cardNumber = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getLadders().get(sourceIndex).getCards().size(), "Cuantas cartas?") + 1;
         return cardNumber;
     }
 
     @Override
     void postExecute(Deck source, Deck target) {
-        //Does nothing
     }
 }

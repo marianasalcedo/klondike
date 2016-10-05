@@ -16,7 +16,7 @@ public class MovePileToFoundationController extends  MoveController {
 
     @Override
     Deck getTarget() {
-        int index = rangeView.askForRange(0, game.getBoard().getFoundations().size(), "A que palo?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, game.getBoard().getFoundations().size(), "A que palo?");
         return game.getBoard().getFoundations().get(index);
     }
 
@@ -43,6 +43,5 @@ public class MovePileToFoundationController extends  MoveController {
 
     @Override
     void postExecute(Deck source, Deck target) {
-        //Does nothing
     }
 }

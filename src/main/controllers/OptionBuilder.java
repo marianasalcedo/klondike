@@ -19,7 +19,7 @@ public class OptionBuilder {
 
     public OperationController getOptionController() {
         optionView.writeOptions(options);
-        int index = rangeView.askForRange(0, options.length, "Opcion?");
+        int index = rangeView.askForRange(rangeView.MIN_RANGE, options.length, "Opcion?");
         return options[index].getOperationController();
     }
 }

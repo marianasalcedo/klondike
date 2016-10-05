@@ -11,9 +11,6 @@ public class Card {
     private Suit suit;
     private Boolean isHidden;
 
-    public Card() {
-    }
-
     public Card(Color color, Number number, Suit suit, Boolean isHidden) {
         this.color = color;
         this.number = number;
