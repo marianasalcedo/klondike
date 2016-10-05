@@ -1,11 +1,9 @@
-import main.views.BoardView;
+import main.controllers.KlondikeController;
 
 
 public class Klondike {
 
-
     public static void main(String[] args) {
-        BoardView boardView = new BoardView();
-        boardView.printBoard();
+        new KlondikeController().play();
     }
 }

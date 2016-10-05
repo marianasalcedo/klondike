@@ -1,8 +1,14 @@
 package main.controllers;
 
-public class ExitController extends Controller{
+import main.models.enums.State;
+import main.views.ExitStateView;
+
+public class ExitController extends OperationController {
+
     @Override
-    public void control() {
-        
+    public void execute() {
+        ExitStateView exitStateView = new ExitStateView();
+        exitStateView.writeExit();
+        game.setState(State.EXIT);
     }
 }
