@@ -5,15 +5,16 @@ import main.utils.IO;
 
 public class CardView {
 
-    private final static String HIDDEN_CARD_SYMBOL = "[X,X]";
+    private final static String LAST_CARD_HIDDEN_SYMBOL = "[X,X]";
+    private final static String LADDER_CARD_HIDDEN_SYMBOL = "[";
 
     /**
      * @param card
      *      Card to be printed.
      */
-    public void writeCard(Card card) {
+    public void writeCard(Card card, Boolean isLastCard) {
         if ( card.isHidden() ) {
-            IO.instance().write(HIDDEN_CARD_SYMBOL);
+            IO.instance().write( isLastCard ? LAST_CARD_HIDDEN_SYMBOL : LADDER_CARD_HIDDEN_SYMBOL);
         } else {
             IO.instance().write("[" + card.getNumber().getSymbol() + ", " + card.getSuit().getSymbol() + ", "
                     + card.getColor().getSymbol() + "]");

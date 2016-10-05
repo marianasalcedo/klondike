@@ -2,6 +2,7 @@ package main.controllers;
 
 import main.models.Card;
 import main.models.Deck;
+import main.models.Foundation;
 import main.views.RangeView;
 
 public class MovePileToFoundationController extends  MoveController {
@@ -28,7 +29,9 @@ public class MovePileToFoundationController extends  MoveController {
                     && sourceCard.getSuit().equals(targetCard.getSuit())
                     && sourceCard.getNumber().getValue() == targetCard.getNumber().getValue() + 1;
         } else if ( !source.isEmpty()) {
-            return true;
+            Foundation foundation = (Foundation) target;
+            return source.getLastCard().getSuit().equals(foundation.getSuit())
+                    && source.getLastCard().getColor().equals(foundation.getColor());
         }
         return false;
     }

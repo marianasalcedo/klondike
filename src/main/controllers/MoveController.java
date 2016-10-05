@@ -2,6 +2,7 @@ package main.controllers;
 
 import main.models.Card;
 import main.models.Deck;
+import main.views.ErrorView;
 
 import java.util.List;
 
@@ -21,14 +22,17 @@ public abstract class MoveController extends OperationController {
     public void execute() {
         Deck source = getSource();
         Deck target = getTarget();
+        int numberOfCards = getCardNumber();
 
         if ( validateMovement(source, target) ) {
-            List<Card> cards = source.moveCards(getCardNumber());
+            List<Card> cards = source.moveCards(numberOfCards);
             for(Card card : cards) {
                 target.addCard(card);
             }
+            postExecute(source, target);
+        } else {
+            ErrorView.instance().writeError("Operacion no valida");
         }
 
-        postExecute(source, target);
     }
 }

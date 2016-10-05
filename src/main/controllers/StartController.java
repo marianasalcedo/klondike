@@ -70,7 +70,13 @@ public class StartController extends OperationController {
 
     private void initializeFoundations(Board board) {
         for (Suit suit : Suit.values()) {
-            Foundation foundation = new Foundation(suit);
+            Color suitColor;
+            if ( suit == Suit.HEART || suit == Suit.DIAMOND) {
+                suitColor = Color.RED;
+            } else {
+                suitColor = Color.BLACK;
+            }
+            Foundation foundation = new Foundation(suit, suitColor);
             board.getFoundations().add(foundation);
         }
     }
