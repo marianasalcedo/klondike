@@ -5,15 +5,15 @@ import main.utils.IO;
 
 public class CardView {
 
+    private final static String HIDDEN_CARD_SYMBOL = "[X,X]";
+
     /**
      * @param card
      *      Card to be printed.
-     * @param hiddenSymbol
-     *      String to be printed if the card should be hidden.
      */
-    public void writeCard(Card card, String hiddenSymbol) {
+    public void writeCard(Card card) {
         if ( card.isHidden() ) {
-            IO.instance().write(hiddenSymbol);
+            IO.instance().write(HIDDEN_CARD_SYMBOL);
         } else {
             IO.instance().write("[" + card.getNumber().getSymbol() + ", " + card.getSuit().getSymbol() + ", "
                     + card.getColor().getSymbol() + "]");

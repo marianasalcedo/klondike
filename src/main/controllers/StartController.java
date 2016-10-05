@@ -63,7 +63,7 @@ public class StartController extends OperationController {
             for ( int j = 0; j < i; j++ ) {
                 ladder.addCard(cards.remove(0));
             }
-            ladder.getCard().setHidden(false);
+            ladder.getLastCard().setHidden(false);
             board.getLadders().add(ladder);
         }
     }

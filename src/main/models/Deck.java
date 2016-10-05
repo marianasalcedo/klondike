@@ -3,6 +3,7 @@ package main.models;
 import main.models.enums.Number;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,8 +35,10 @@ public class Deck {
         assert quantity <= cards.size();
         List<Card> result = new ArrayList<>();
         for ( int i = 0; i < quantity; i++ ) {
-            result.add(cards.remove(cards.size()-1));
+            Card card = cards.remove(cards.size() - 1);
+            result.add(card);
         }
+        Collections.reverse(result);
         return result;
     }
 
@@ -43,17 +46,8 @@ public class Deck {
         return cards.stream().filter(card -> card.isHidden()).collect(Collectors.toList()).size();
     }
 
-    /**
-     * Get last card on the deck.
-     * @return
-     *      Last visible card on the deck.
-     */
-    public Card getCard() {
+    public Card getLastCard() {
         return cards.get(cards.size() - 1);
-    }
-
-    public Card takeCard() {
-        return cards.remove(cards.size() - 1);
     }
 
     public void addCard(Card card) {

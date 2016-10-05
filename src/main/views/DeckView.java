@@ -6,14 +6,16 @@ import main.utils.IO;
 public class DeckView {
 
     private final static CardView cardView = new CardView();
-    private final static String DEFAULT_HIDDEN_SYMBOL = "[X,X]";
-    private final static String LADDER_HIDDEN_SYMBOL = "[";
+    private final static String LADDER_SYMBOL = "[";
 
     public void writeDeck(Deck deck) {
         if ( deck.isEmpty() ) {
             printEmptyDeck();
         } else {
-            deck.getCards().forEach(card -> cardView.writeCard(card, LADDER_HIDDEN_SYMBOL));
+            for (int i = 0; i < deck.getCards().size() - 1; i++) {
+                IO.instance().write(LADDER_SYMBOL);
+            }
+            cardView.writeCard(deck.getLastCard());
             IO.instance().writeln();
         }
     }
@@ -22,7 +24,7 @@ public class DeckView {
         if ( deck.isEmpty() ) {
             printEmptyDeck();
         } else {
-            cardView.writeCard(deck.getCard(), DEFAULT_HIDDEN_SYMBOL);
+            cardView.writeCard(deck.getLastCard());
             IO.instance().writeln();
         }
     }
